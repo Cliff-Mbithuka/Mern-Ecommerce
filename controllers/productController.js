@@ -70,7 +70,9 @@ exports.deleteProduct = async (req, res, next) => {
         })
     }
 
-    await product.remove();
+    // await product.remove();
+
+    await Product.deleteOne({ _id: req.params.id });
 
     res.status(200).json({
         success: true,
