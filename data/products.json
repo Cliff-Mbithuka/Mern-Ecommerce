@@ -1,0 +1,101 @@
+[
+    {
+        "name": "Stylish Hoodie",
+        "price": 49.99,
+        "description": "A stylish and comfortable hoodie, perfect for cooler weather.",
+        "ratings": 4.6,
+        "images": [
+            {
+                "public_id": "product1_image1",
+                "url": "https://example.com/images/product1_image1.jpg"
+            },
+            {
+                "public_id": "product1_image2",
+                "url": "https://example.com/images/product1_image2.jpg"
+            }
+        ],
+        "category": "Clothes/Shoes",
+        "seller": "Jane Doe",
+        "stock": 150,
+        "reviews": [
+            {
+                "name": "Alice Brown",
+                "rating": 5,
+                "comment": "Absolutely love this hoodie! Great quality.",
+                "user": "alice_brown_123",
+                "createdAt": "2024-06-12T09:00:00.000Z"
+            },
+            {
+                "name": "Bob White",
+                "rating": 4,
+                "comment": "Very comfortable but slightly expensive.",
+                "user": "bob_white_456",
+                "createdAt": "2024-06-11T14:00:00.000Z"
+            }
+        ]
+    },
+    {
+        "name": "Gaming Mouse",
+        "price": 59.99,
+        "description": "High precision gaming mouse with customizable buttons.",
+        "ratings": 4.9,
+        "images": [
+            {
+                "public_id": "product2_image1",
+                "url": "https://example.com/images/product2_image1.jpg"
+            },
+            {
+                "public_id": "product2_image2",
+                "url": "https://example.com/images/product2_image2.jpg"
+            }
+        ],
+        "category": "Accessories",
+        "seller": "Tech World",
+        "stock": 200,
+        "reviews": [] 
+    },
+    {
+        "name": "Smartwatch",
+        "price": 199.99,
+        "description": "A sleek smartwatch with multiple health tracking features.",
+        "ratings": 4.8,
+        "images": [
+            {
+                "public_id": "product3_image1",
+                "url": "https://example.com/images/product3_image1.jpg"
+            }
+        ],
+        "category": "Electronics",
+        "seller": "Gadget Hub",
+        "stock": 85,
+        "reviews": [
+            {
+                "name": "Charlie Green",
+                "rating": 5,
+                "comment": "This smartwatch has all the features I need.",
+                "user": "charlie_green_789",
+                "createdAt": "2024-06-13T10:00:00.000Z"
+            }
+        ]
+    },
+    {
+        "name": "Camping Tent",
+        "price": 149.99,
+        "description": "Spacious and durable camping tent for all your outdoor adventures.",
+        "ratings": 4.5,
+        "images": [
+            {
+                "public_id": "product4_image1",
+                "url": "https://example.com/images/product4_image1.jpg"
+            },
+            {
+                "public_id": "product4_image2",
+                "url": "https://example.com/images/product4_image2.jpg"
+            }
+        ],
+        "category": "Outdoor",
+        "seller": "Adventure Gear",
+        "stock": 40,
+        "reviews": []  
+    }
+]
