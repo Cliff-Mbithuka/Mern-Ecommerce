@@ -3,6 +3,7 @@ const User = require("../models/user");
 const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncError = require("../middlewares/catchAsyncErrors");
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
+const sendToken = require("../utils/jwtToken");
 
 // register a user  => /api/v1/register
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
@@ -21,10 +22,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 const token = user.getJwtToken();
 
 
-  res.status(201).json({
-    success: true,
-    token
-  });
+ sendToken(user, 200, res)
 });
 
 // Login user => /a[i/v1/login]
@@ -53,8 +51,5 @@ exports.loginUser = catchAsyncError(async (req, res, next) => {
 
     const token = user.getJwtToken();
 
-    res.status(201).json({
-        success: true,
-        token
-      });
+    sendToken(user, 200, res)
 });
