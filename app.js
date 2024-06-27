@@ -8,7 +8,7 @@ const errorMiddleware = require('./middlewares/errors')
 app.use(express.json());
 
 app.use('/api/v1/products', products);
-app.use('/api/v1/register', auth);
+app.use('/api/v1/', auth);
 
 // Middleware to Handle Errors
 app.use(errorMiddleware);
