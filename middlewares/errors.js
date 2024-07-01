@@ -21,7 +21,7 @@ if(process.env.NODE_ENV === 'PRODUCTION'){
         error = new ErrorHandler(message, 400)
     }
 
-    //Handling Mongoose Validation
+    //Handling Mongoose Validation error
     if(err.name === 'ValidationError'){
         const message = Object.values(err.errors).map(value => value.message);
         error = new ErrorHandler(message, 400)
@@ -29,9 +29,21 @@ if(process.env.NODE_ENV === 'PRODUCTION'){
 
     // Handling mongoose dublicate key errors
     if(err.code === 11000){
-        const message = `Duplicate ${Object.keys(err.keyValue)}entered`
+        const message = `Duplicate ${Object.keys(err.keyValue)} entered`
         error = new ErrorHandler(message, 400)
     }
+
+       //handling wrong JWT error
+       if (err.name === 'TokenExpiredError') {
+        const message = 'JSON web Token is already expired. Try Again!!!'
+        error = new ErrorHandler(message, 400)
+      }
+  
+      //handling expired JWT error
+      if (err.name === 'JsonWebTokenError') {
+        const message = 'JSON web Token is ivalid. Try Again!!!'
+        error = new ErrorHandler(message, 400)
+      }
 
     res.status(err.statusCode).json({
         success:false,
