@@ -126,9 +126,31 @@ resetPasswordExpire: {$gt: Date.now()}
   sendToken(user, 200, res)
 })
 
+// Get currenntly logged in user details =>  /api/v1/me
+exports.getUserProfile = catchAsyncErrors(async (req, res, next) => {
+  const user = await User.findById(req.user.id);
 
+  res.status(200).json({
+    success: true,
+    user
+  })
+})
 
+// Update / change password => /api/v1/password/update
+exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
+const user = await User.findById(req.user.id).select('+password');
 
+// check previous user password
+const isMatched = await user.comparePassword(req.body.oldPassword)
+if(!isMatchedMatched){
+  return next(new ErrorHandler('old password is incorrect', 400));
+}
+
+user.password = req.body.password;
+await user.save();
+
+sendToken(user, 200, res)
+})
 
 // Logout user  => /api/v1/logout
 exports.logout = catchAsyncError(async(req, res, next) => {
