@@ -96,3 +96,5 @@ createdAt: {
     default: Date.now
 }
 })
+
+module.exports = mongoose.model('Order', orderSchema)
